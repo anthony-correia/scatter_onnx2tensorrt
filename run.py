@@ -23,15 +23,14 @@ class ScatterModule(torch.nn.Module):
         )
 
     def forward(self, e: torch.Tensor, index: torch.Tensor) -> torch.Tensor:
-        """Scatter-sum ``e`` with indices ``index`` on ``x``.
+        """Scatter-sum ``e`` with indices ``index``.
 
         Args:
-            x: 2D tensor of shape ``(n_x, dim_size)``
             e: 2D tensor of shape ``(n_e, dim_size)``
             index: 1D tensor of shape ``(n_e,)`` of integer indices
 
         Returns:
-            Tensor of shape ``(n_x, dim_size)``
+            Tensor of shape ``(n_outputs, dim_size)``
             The result of scattering elements in ``e`` along dimension 0, according
             to the indices in ``index``, with a sum reduction.
             ``index`` is broadcasted along the dimension 1 of ``e``.
