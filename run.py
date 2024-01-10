@@ -14,11 +14,11 @@ import onnxruntime
 class ScatterModule(torch.nn.Module):
     """A PyTorch module involving a scatter sum. To be converted to ONNX."""
 
-    def __init__(self, n_outputs: int, n_features: int):
+    def __init__(self, n_outputs: int, dim_size: int):
         super(ScatterModule, self).__init__()
         self.n_outputs = int(n_outputs)
         self.network = torch.nn.Sequential(
-            torch.nn.Linear(in_features=n_features, out_features=n_features),
+            torch.nn.Linear(in_features=dim_size, out_features=dim_size),
             torch.nn.ReLU(),
         )
 
