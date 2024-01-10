@@ -42,7 +42,7 @@ larger than the number of outputs (`n_outputs`, corresponding to the nodes in th
 
 ## Prerequisites
 
-- TensorRT, (I used `8.6.1.6-1+cuda11.8`).
+- TensorRT (I used `8.6.1.6-1+cuda11.8`).
 - `trtexec` accessible in the PATH environment variable. For instance:
     ```bash
     PATH="/usr/src/tensorrt/bin:$PATH"
