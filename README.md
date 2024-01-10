@@ -48,7 +48,7 @@ larger than the number of outputs (`n_outputs`, corresponding to the nodes in th
     PATH="/usr/src/tensorrt/bin:$PATH"
     ```
 
-## Reproduce The Issue
+## Reproducing the Issue
 
 The ONNX models are stored with the naming convention
 `onnx/{n_indices}_{dim_size}_{n_outputs}_{seed}.onnx`.
