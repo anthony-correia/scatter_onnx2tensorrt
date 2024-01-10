@@ -1,0 +1,12 @@
+name: onnx2tensorrt_scatter_issue
+channels:
+- pyg
+- pytorch
+- nvidia
+- conda-forge
+dependencies:
+- pytorch=2.1.2
+- pytorch-scatter=2.1.2
+- pytorch-cuda
+- onnx=1.15.0
+- onnxruntime=1.16.3
