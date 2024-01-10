@@ -12,7 +12,7 @@ import onnxruntime
 
 
 class ScatterModule(torch.nn.Module):
-    """A PyTorch module involving a scatter max. To be converted to ONNX."""
+    """A PyTorch module involving a scatter sum. To be converted to ONNX."""
 
     def __init__(self, n_outputs: int, n_features: int):
         super(ScatterModule, self).__init__()
@@ -23,7 +23,7 @@ class ScatterModule(torch.nn.Module):
         )
 
     def forward(self, e: torch.Tensor, index: torch.Tensor) -> torch.Tensor:
-        """Scatter-max ``e`` with indices ``index`` on ``x``.
+        """Scatter-sum ``e`` with indices ``index`` on ``x``.
 
         Args:
             x: 2D tensor of shape ``(n_x, dim_size)``
@@ -56,7 +56,7 @@ class ScatterModule(torch.nn.Module):
 
 def get_parsed_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        "Check ONNX -> TensorRT conversion for scatter_max."
+        "Check ONNX -> TensorRT conversion for scatter_sum."
     )
     parser.add_argument(
         "--n_indices", type=int, default=1000, help="Number of indices and `e` inputs."
